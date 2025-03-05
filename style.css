@@ -1,0 +1,121 @@
+/* General Page Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px 0;
+}
+
+/* Instagram App Container */
+#app {
+  width: 400px;
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  padding: 10px; /* Ensures content doesn't touch the edges */
+  box-sizing: border-box; /* Prevents padding from affecting width */
+}
+
+/* Feed Adjustments */
+#feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%; /* Make sure feed takes full width */
+}
+
+/* Ensure posts take full width */
+.post {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #dbdbdb;
+  box-sizing: border-box; /* Fix width calculation issues */
+}
+
+/* Fix for images and videos to ensure they align properly */
+.post img,
+.post video {
+  width: 100%;
+  max-height: 500px;
+  border-radius: 5px;
+  object-fit: cover;
+  display: block; /* Prevents extra spacing issues */
+  margin: 0 auto; /* Ensures media is centered */
+}
+
+/* Center text elements properly */
+.post h3,
+.post p {
+  text-align: left;
+  margin-left: 5px;
+}
+
+/* Comments and input box alignment fix */
+.comments {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-align: left;
+  padding: 5px;
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Carousel Images */
+.carousel-container img {
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px; /* Bigger size for better visibility */
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Positioning the Left and Right Buttons */
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+/* Carousel Indicator */
+.carousel-indicator {
+  position: absolute;
+  bottom: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
