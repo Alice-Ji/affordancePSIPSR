@@ -154,3 +154,25 @@ window.nextImage = function (index) {
 
 // Load the feed when the page loads
 renderFeed();
+
+// Global variable to store all comments
+let collectedComments = [];
+
+window.addComment = function (index) {
+  const input = document.getElementById(`comment-input-${index}`);
+  if (input.value.trim()) {
+    let comment = input.value.trim();
+    posts[index].comments.push(comment);
+    collectedComments.push(comment); // Store comment in global array
+    updateComments(index);
+    input.value = ""; // Clear input
+  }
+};
+
+function sendCommentsToQualtrics() {
+  let commentsString = encodeURIComponent(collectedComments.join(" | ")); // Format comments
+  let surveyURL = new URL(window.location.href); // Get Qualtrics survey URL
+  surveyURL.searchParams.set("comments", commentsString); // Attach comments as a URL param
+
+  window.location.href = surveyURL.toString(); // Redirect back to Qualtrics with data
+}
