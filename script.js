@@ -169,18 +169,16 @@ window.addComment = function (index) {
   }
 };
 
-window.sendCommentsToQualtrics = function () {
+function sendCommentsToQualtrics() {
     let commentsString = collectedComments.join(" | "); // Convert comments to a string
     console.log("Trying to send comments:", commentsString);
 
-    let qualtricsOrigin = window.location !== window.parent.location 
-        ? document.referrer 
-        : document.location.href;
-
+    // Ensure it's sending to the correct Qualtrics page
+    let qualtricsOrigin = document.referrer || window.parent.location.origin;
     console.log("Sending message to:", qualtricsOrigin);
 
-    // Send message to Qualtrics
-    window.parent.postMessage({ comments: commentsString }, "*");
-};
+    window.parent.postMessage({ comments: commentsString }, qualtricsOrigin);
+}
+
 
 
