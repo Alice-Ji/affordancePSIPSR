@@ -1,3 +1,5 @@
+console.log("🚀 script.js has loaded successfully!");
+
 // Sample post data
 const posts = [
   {
