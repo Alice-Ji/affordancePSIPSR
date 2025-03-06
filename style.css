@@ -1,6 +1,6 @@
 /* General Page Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   background-color: #fafafa;
   display: flex;
   justify-content: center;
@@ -118,4 +118,24 @@ body {
   font-size: 14px;
   padding: 5px 10px;
   border-radius: 15px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adds spacing between avatar and username */
+  margin-bottom: 8px;
+  max-width: fit-content; /* Ensures it doesn’t stretch */
+}
+
+.avatar {
+  width: 32px; /* Adjust size as needed */
+  height: 32px;
+  border-radius: 50%; /* Makes it a perfect circle */
+  object-fit: cover; /* Ensures the image fills the circle */
+  display: block; /* Ensures it behaves properly inside flex */
+}
+
+.username {
+  font-size: 16px;
 }
