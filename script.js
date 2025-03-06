@@ -169,16 +169,15 @@ window.addComment = function (index) {
   }
 };
 
-function sendCommentsToQualtrics() {
+window.sendCommentsToQualtrics = function () {
     let commentsString = collectedComments.join(" | "); // Convert comments to a string
     console.log("Trying to send comments:", commentsString);
 
-    // Ensure it's sending to the correct Qualtrics page
     let qualtricsOrigin = document.referrer || window.parent.location.origin;
     console.log("Sending message to:", qualtricsOrigin);
 
-    window.parent.postMessage({ comments: commentsString }, qualtricsOrigin);
-}
+    window.parent.postMessage({ comments: commentsString }, "*");
+};
 
 
 
