@@ -56,12 +56,46 @@ body {
   margin-left: 5px;
 }
 
-/* Comments and input box alignment fix */
-.comments {
-  max-width: 100%;
-  overflow-wrap: break-word;
-  text-align: left;
+.comment-section {
+  display: flex;
+  flex-direction: column; /* Keeps comments stacked */
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Wrap input + send button in a row */
+.comment-input-container {
+  display: flex;
+  align-items: center; /* Align input & send button in the same row */
+  width: 100%;
+  gap: 6px; /* Adds space between input & send button */
+}
+
+/* Style for the input */
+.comment-section input {
+  flex: 1; /* Takes up remaining space */
   padding: 5px;
+  font-size: 14px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+}
+
+/* Ensure comments list stays below */
+.comment-section ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0;
+  margin-top: 5px; /* Space between input & first comment */
+  width: 100%; /* Makes sure comments take full width */
+}
+
+.comment-section ul li {
+  display: block !important; /* Forces each comment onto a new line */
+  width: 100% !important;
+  word-wrap: break-word !important;
+  white-space: normal !important;
+  clear: both !important; /* Forces separation from input box */
+  margin-top: 5px !important; /* Adds space between comments */
+  text-align: left; /* Ensures proper alignment */
 }
 
 /* Carousel Container */
@@ -138,4 +172,44 @@ body {
 
 .username {
   font-size: 16px;
+}
+
+/* Post actions (Like, Comment, and Send icons) */
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icons */
+  margin-top: 5px;
+}
+
+/* Like & Comment buttons */
+.action-icon {
+  max-width: 24px;
+  max-height: 24px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  object-fit: contain; /* Prevents cropping */
+  display: inline-block; /* Ensures they don’t collapse */
+}
+
+/* Send Comment button */
+.send-icon {
+  max-width: 24px;
+  max-height: 24px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  object-fit: contain; /* Prevents cropping */
+  display: inline-block; /* Ensures they don’t collapse */
+}
+
+/* Ensure images don’t overflow */
+img {
+  max-width: unset; /* Remove unwanted scaling */
+  height: auto; /* Keep the correct aspect ratio */
+}
+
+.hidden {
+  display: none; /* Hide elements */
 }
