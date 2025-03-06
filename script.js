@@ -173,11 +173,12 @@ window.sendCommentsToQualtrics = function () {
     let commentsString = collectedComments.join(" | "); // Convert comments to a string
     console.log("Trying to send comments:", commentsString);
 
-    let qualtricsOrigin = document.referrer || window.parent.location.origin;
-    console.log("Sending message to:", qualtricsOrigin);
+    let qualtricsURL = "https://illinois.qualtrics.com"; // Hardcoded Qualtrics origin
+    console.log("Sending message to:", qualtricsURL);
 
-    window.parent.postMessage({ comments: commentsString }, "*");
+    window.parent.postMessage({ comments: commentsString }, qualtricsURL);
 };
+
 
 
 
