@@ -37,6 +37,28 @@ const posts = [
     comments: [],
     currentIndex: 0, // Track which image is showing in the carousel
   },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-1.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-1.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+  },
 ];
 
 // Function to render posts
