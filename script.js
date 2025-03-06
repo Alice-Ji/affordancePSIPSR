@@ -174,15 +174,26 @@ window.addComment = function (index) {
     if (input.value.trim()) {
         let comment = input.value.trim();
         posts[index].comments.push(comment);
-        collectedComments.push(comment); // Store in global array
+        collectedComments.push(comment);
         updateComments(index);
-        input.value = ""; // Clear input
+        input.value = ""; 
 
-        // Automatically send comments to Qualtrics
+        // Debugging log
         console.log("Auto-sending comments after new entry...");
         sendCommentsToQualtrics();
     }
 };
+
+window.sendCommentsToQualtrics = function () {
+    let commentsString = collectedComments.join(" | ");
+    console.log("Trying to send comments:", commentsString);
+
+    let qualtricsURL = "https://illinois.qualtrics.com";
+    console.log("Sending message to:", qualtricsURL);
+
+    window.parent.postMessage({ comments: commentsString }, qualtricsURL);
+};
+
 
 
 
