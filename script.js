@@ -170,9 +170,16 @@ window.addComment = function (index) {
 };
 
 function sendCommentsToQualtrics() {
-  let commentsString = encodeURIComponent(collectedComments.join(" | ")); // Format comments
-  let surveyURL = new URL(window.location.href); // Get Qualtrics survey URL
-  surveyURL.searchParams.set("comments", commentsString); // Attach comments as a URL param
+    let commentsString = collectedComments.join(" | "); // Convert comments to a string
+    console.log("Trying to send comments:", commentsString);
 
-  window.location.href = surveyURL.toString(); // Redirect back to Qualtrics with data
+    let qualtricsOrigin = window.location !== window.parent.location 
+        ? document.referrer 
+        : document.location.href;
+
+    console.log("Sending message to:", qualtricsOrigin);
+
+    // Send message to Qualtrics
+    window.parent.postMessage({ comments: commentsString }, "*");
 }
+
