@@ -98,12 +98,22 @@ function renderFeed() {
     </div>
     ${mediaContent}
             <p>${post.caption}</p>
-            <button id="like-btn-${index}" onclick="window.likePost(${index})">❤️ Like (<span id="likes-${index}">${post.likes}</span>)</button>
-            <div class="comments">
-                <input type="text" id="comment-input-${index}" placeholder="Add a comment...">
-                <button onclick="window.addComment(${index})">Post</button>
-                <ul id="comments-${index}"></ul>
-            </div>
+            <div class="post-actions">
+    <img id="like-btn-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like1.png?raw=true" 
+         alt="Like" class="action-icon" onclick="window.likePost(${index})">
+    <img id="comment-btn-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-comment.png?raw=true"
+         alt="Comment" class="action-icon" onclick="window.toggleComment(${index})">
+</div>
+<div id="comment-section-${index}" class="comment-section hidden">
+    <div class="comment-input-container">
+        <input type="text" id="comment-input-${index}" placeholder="Add a comment...">
+        <img id="send-comment-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-sendcomment.png?raw=true" 
+             alt="Send" class="send-icon" onclick="window.addComment(${index})">
+    </div>
+    <ul id="comments-${index}"></ul>
+</div>
+
+
         `;
     feed.appendChild(postElement);
 
@@ -171,11 +181,17 @@ function updateCarousel(index) {
 
 // Function to like a post (only once)
 window.likePost = function (index) {
+  let likeBtn = document.getElementById(`like-btn-${index}`);
   if (!posts[index].liked) {
     posts[index].likes++;
     posts[index].liked = true;
-    document.getElementById(`likes-${index}`).textContent = posts[index].likes;
-    document.getElementById(`like-btn-${index}`).disabled = true;
+    likeBtn.src =
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like2.png?raw=true";
+  } else {
+    posts[index].likes--;
+    posts[index].liked = false;
+    likeBtn.src =
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like1.png?raw=true";
   }
 };
 
@@ -192,12 +208,25 @@ window.addComment = function (index) {
 // Function to update comments
 function updateComments(index) {
   const commentList = document.getElementById(`comments-${index}`);
-  commentList.innerHTML = "";
+  commentList.innerHTML = ""; // Clear and re-add comments
+
   posts[index].comments.forEach((comment) => {
     const newComment = document.createElement("li");
     newComment.textContent = comment;
+
+    // 🚨 THIS FORCES THE COMMENTS TO BE ON A NEW LINE 🚨
+    newComment.style.display = "block";
+    newComment.style.width = "100%";
+    newComment.style.marginTop = "5px";
+    newComment.style.wordWrap = "break-word";
+    newComment.style.clear = "both"; // 💥 Ensures no floating elements next to it
+
     commentList.appendChild(newComment);
   });
+
+  // 🚀 FORCES THE BROWSER TO RERENDER THE COMMENTS 🚀
+  commentList.style.display = "none";
+  setTimeout(() => (commentList.style.display = "block"), 10);
 }
 
 // Load the feed when the page loads
@@ -241,4 +270,9 @@ window.sendCommentsToQualtrics = function () {
   console.log("Sending message to:", qualtricsURL);
 
   window.parent.postMessage({ comments: commentsString }, qualtricsURL);
+};
+
+window.toggleComment = function (index) {
+  let commentSection = document.getElementById(`comment-section-${index}`);
+  commentSection.classList.toggle("hidden"); // Show/hide comment section
 };
