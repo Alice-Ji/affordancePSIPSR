@@ -180,11 +180,13 @@ window.addComment = function (index) {
         updateComments(index);
         input.value = ""; 
 
-        // Debugging log
-        console.log("Auto-sending comments after new entry...");
+        console.log("✅ addComment() triggered! New comment:", comment);
+
+        // Auto-send comments
         sendCommentsToQualtrics();
     }
 };
+
 
 window.sendCommentsToQualtrics = function () {
     let commentsString = collectedComments.join(" | ");
