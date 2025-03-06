@@ -70,8 +70,11 @@ function renderFeed() {
     }
 
     postElement.innerHTML = `
-            <h3>@${post.username}</h3>
-            ${mediaContent}
+    <div class="post-header">
+        <img class="avatar" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true" alt="Avatar">
+        <span class="username">${post.username}</span>
+    </div>
+    ${mediaContent}
             <p>${post.caption}</p>
             <button id="like-btn-${index}" onclick="window.likePost(${index})">❤️ Like (<span id="likes-${index}">${post.likes}</span>)</button>
             <div class="comments">
