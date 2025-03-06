@@ -169,7 +169,7 @@ window.addComment = function (index) {
   }
 };
 
-function sendCommentsToQualtrics() {
+window.sendCommentsToQualtrics = function () {
     let commentsString = collectedComments.join(" | "); // Convert comments to a string
     console.log("Trying to send comments:", commentsString);
 
@@ -181,5 +181,6 @@ function sendCommentsToQualtrics() {
 
     // Send message to Qualtrics
     window.parent.postMessage({ comments: commentsString }, "*");
-}
+};
+
 
