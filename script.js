@@ -4,7 +4,7 @@ console.log("🚀 script.js has loaded successfully!");
 const posts = [
   {
     type: "image",
-    username: "fake_influencer",
+    username: "rozy.gram",
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-1.jpg?raw=true",
     ],
@@ -15,7 +15,7 @@ const posts = [
   },
   {
     type: "video",
-    username: "fake_influencer",
+    username: "rozy.gram",
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-1.mp4",
     ],
@@ -26,7 +26,7 @@ const posts = [
   },
   {
     type: "carousel",
-    username: "fake_influencer",
+    username: "rozy.gram",
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-1.1.jpg?raw=true",
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-1.2.jpg?raw=true",
@@ -89,29 +89,60 @@ function renderFeed() {
 // Function to switch to the next image in the carousel
 window.nextImage = function (index) {
   if (posts[index].type === "carousel") {
-    posts[index].currentIndex =
-      (posts[index].currentIndex + 1) % posts[index].media.length;
-    document.getElementById(`carousel-${index}`).src =
-      posts[index].media[posts[index].currentIndex];
-    document.getElementById(`indicator-${index}`).textContent = `${
-      posts[index].currentIndex + 1
-    } / ${posts[index].media.length}`;
+    if (posts[index].currentIndex < posts[index].media.length - 1) {
+      posts[index].currentIndex++;
+      console.log(
+        `➡️ Next Image: Now showing ${posts[index].currentIndex + 1} / ${
+          posts[index].media.length
+        }`
+      );
+      updateCarousel(index);
+    }
   }
 };
 
 // Function to switch to the previous image in the carousel
 window.prevImage = function (index) {
   if (posts[index].type === "carousel") {
-    posts[index].currentIndex =
-      (posts[index].currentIndex - 1 + posts[index].media.length) %
-      posts[index].media.length;
-    document.getElementById(`carousel-${index}`).src =
-      posts[index].media[posts[index].currentIndex];
-    document.getElementById(`indicator-${index}`).textContent = `${
-      posts[index].currentIndex + 1
-    } / ${posts[index].media.length}`;
+    if (posts[index].currentIndex > 0) {
+      posts[index].currentIndex--;
+      console.log(
+        `⬅️ Previous Image: Now showing ${posts[index].currentIndex + 1} / ${
+          posts[index].media.length
+        }`
+      );
+      updateCarousel(index);
+    }
   }
 };
+
+// Function to update the carousel display, including the indicator
+function updateCarousel(index) {
+  let post = posts[index];
+
+  console.log(
+    `🔄 Updating carousel ${index}: Now at ${post.currentIndex + 1} / ${
+      post.media.length
+    }`
+  );
+
+  let imageElement = document.getElementById(`carousel-${index}`);
+  let indicatorElement = document.getElementById(`indicator-${index}`);
+
+  if (imageElement) {
+    imageElement.src = post.media[post.currentIndex]; // Update the image
+  } else {
+    console.warn(`❌ Image element "carousel-${index}" not found.`);
+  }
+
+  if (indicatorElement) {
+    indicatorElement.textContent = `${post.currentIndex + 1} / ${
+      post.media.length
+    }`; // Fix: Removed extra parentheses
+  } else {
+    console.warn(`❌ Indicator element "indicator-${index}" not found.`);
+  }
+}
 
 // Function to like a post (only once)
 window.likePost = function (index) {
@@ -144,16 +175,6 @@ function updateComments(index) {
   });
 }
 
-// Function to switch images in the carousel
-window.nextImage = function (index) {
-  if (posts[index].type === "carousel") {
-    posts[index].currentIndex =
-      (posts[index].currentIndex + 1) % posts[index].media.length;
-    document.getElementById(`carousel-${index}`).src =
-      posts[index].media[posts[index].currentIndex];
-  }
-};
-
 // Load the feed when the page loads
 renderFeed();
 
@@ -172,34 +193,27 @@ window.addComment = function (index) {
 };
 
 window.addComment = function (index) {
-    const input = document.getElementById(`comment-input-${index}`);
-    if (input.value.trim()) {
-        let comment = input.value.trim();
-        posts[index].comments.push(comment);
-        collectedComments.push(comment);
-        updateComments(index);
-        input.value = ""; 
+  const input = document.getElementById(`comment-input-${index}`);
+  if (input.value.trim()) {
+    let comment = input.value.trim();
+    posts[index].comments.push(comment);
+    collectedComments.push(comment);
+    updateComments(index);
+    input.value = "";
 
-        console.log("✅ addComment() triggered! New comment:", comment);
+    console.log("✅ addComment() triggered! New comment:", comment);
 
-        // Auto-send comments
-        sendCommentsToQualtrics();
-    }
+    // Auto-send comments
+    sendCommentsToQualtrics();
+  }
 };
-
 
 window.sendCommentsToQualtrics = function () {
-    let commentsString = collectedComments.join(" | ");
-    console.log("Trying to send comments:", commentsString);
+  let commentsString = collectedComments.join(" | ");
+  console.log("Trying to send comments:", commentsString);
 
-    let qualtricsURL = "https://illinois.qualtrics.com";
-    console.log("Sending message to:", qualtricsURL);
+  let qualtricsURL = "https://illinois.qualtrics.com";
+  console.log("Sending message to:", qualtricsURL);
 
-    window.parent.postMessage({ comments: commentsString }, qualtricsURL);
+  window.parent.postMessage({ comments: commentsString }, qualtricsURL);
 };
-
-
-
-
-
-
