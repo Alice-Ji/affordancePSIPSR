@@ -38,15 +38,20 @@ const posts = [
     currentIndex: 0, // Track which image is showing in the carousel
   },
   {
-    type: "image",
+    type: "carousel",
     username: "rozy.gram",
     media: [
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.3.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.4.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.5.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Hanging out at this cool museum! 🏛˙✧˖°📷 ༘ ⋆｡°",
     likes: 0,
     liked: false,
     comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
   },
   {
     type: "image",
