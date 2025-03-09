@@ -47,7 +47,7 @@ const posts = [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.4.jpg?raw=true",
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.5.jpg?raw=true",
     ],
-    caption: "Hanging out at this cool museum! 🏛˙✧˖°📷 ༘ ⋆｡°",
+    caption: "Hanging out at this cool museum! ˙✧˖°📷 ༘ ⋆｡°",
     likes: 0,
     liked: false,
     comments: [],
@@ -66,6 +66,50 @@ const posts = [
   },
 ];
 
+//setupVideoAutoplay
+function setupVideoAutoplay() {
+  const videos = document.querySelectorAll(".video-post");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target
+            .play()
+            .catch((error) => console.warn("Autoplay prevented:", error));
+        } else {
+          entry.target.pause();
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  videos.forEach((video) => {
+    observer.observe(video);
+
+    const playOverlay = video.nextElementSibling; // Get the play button
+
+    video.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+        playOverlay.classList.add("hidden"); // ✅ Hide play button when playing
+      } else {
+        video.pause();
+        playOverlay.classList.remove("hidden"); // ✅ Show play button when paused
+      }
+    });
+
+    video.addEventListener("play", () => {
+      setTimeout(() => playOverlay.classList.add("hidden"), 100); // ✅ Ensure it fades out after play starts
+    });
+
+    video.addEventListener("pause", () => {
+      playOverlay.classList.remove("hidden"); // ✅ Show play button when paused
+    });
+  });
+}
+
 // Function to render posts
 function renderFeed() {
   const feed = document.getElementById("feed");
@@ -79,51 +123,56 @@ function renderFeed() {
     if (post.type === "image") {
       mediaContent = `<img src="${post.media[0]}" alt="Post image">`;
     } else if (post.type === "video") {
+      // ✅ Now inside the loop
       mediaContent = `
-                <video controls>
-                    <source src="${post.media[0]}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            `;
+      <div class="video-container">
+      <video class="video-post" muted loop playsinline>
+          <source src="${post.media[0]}" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <div class="play-overlay hidden"></div> <!-- ✅ This is the only play button now -->
+  </div>
+  
+      `;
     } else if (post.type === "carousel") {
       mediaContent = `
-                <div class="carousel-container">
-                    <button class="carousel-btn left" onclick="prevImage(${index})">&lt;</button>
-                    <img id="carousel-${index}" src="${post.media[0]}" alt="Carousel Image">
-                    <button class="carousel-btn right" onclick="nextImage(${index})">&gt;</button>
-                    <div class="carousel-indicator" id="indicator-${index}">1 / ${post.media.length}</div>
-                </div>
-            `;
+        <div class="carousel-container">
+            <button class="carousel-btn left" onclick="prevImage(${index})">&lt;</button>
+            <img id="carousel-${index}" src="${post.media[0]}" alt="Carousel Image">
+            <button class="carousel-btn right" onclick="nextImage(${index})">&gt;</button>
+            <div class="carousel-indicator" id="indicator-${index}">1 / ${post.media.length}</div>
+        </div>
+      `;
     }
 
     postElement.innerHTML = `
-    <div class="post-header">
-        <img class="avatar" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true" alt="Avatar">
-        <span class="username">${post.username}</span>
-    </div>
-    ${mediaContent}
-            <p>${post.caption}</p>
-            <div class="post-actions">
-    <img id="like-btn-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like1.png?raw=true" 
-         alt="Like" class="action-icon" onclick="window.likePost(${index})">
-    <img id="comment-btn-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-comment.png?raw=true"
-         alt="Comment" class="action-icon" onclick="window.toggleComment(${index})">
-</div>
-<div id="comment-section-${index}" class="comment-section hidden">
-    <div class="comment-input-container">
-        <input type="text" id="comment-input-${index}" placeholder="Add a comment...">
-        <img id="send-comment-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-sendcomment.png?raw=true" 
-             alt="Send" class="send-icon" onclick="window.addComment(${index})">
-    </div>
-    <ul id="comments-${index}"></ul>
-</div>
+      <div class="post-header">
+          <img class="avatar" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true" alt="Avatar">
+          <span class="username">${post.username}</span>
+      </div>
+      ${mediaContent}
+      <p>${post.caption}</p>
+      <div class="post-actions">
+          <img id="like-btn-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like1.png?raw=true" 
+               alt="Like" class="action-icon" onclick="window.likePost(${index})">
+          <img id="comment-btn-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-comment.png?raw=true"
+               alt="Comment" class="action-icon" onclick="window.toggleComment(${index})">
+      </div>
+      <div id="comment-section-${index}" class="comment-section hidden">
+          <div class="comment-input-container">
+              <input type="text" id="comment-input-${index}" placeholder="Add a comment...">
+              <img id="send-comment-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-sendcomment.png?raw=true" 
+                   alt="Send" class="send-icon" onclick="window.addComment(${index})">
+          </div>
+          <ul id="comments-${index}"></ul>
+      </div>
+    `;
 
-
-        `;
     feed.appendChild(postElement);
-
     updateComments(index);
   });
+
+  setupVideoAutoplay(); // ✅ Ensure observer is set up after rendering
 }
 
 // Function to switch to the next image in the carousel
