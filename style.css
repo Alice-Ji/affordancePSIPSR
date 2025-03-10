@@ -154,24 +154,43 @@ body {
   border-radius: 15px;
 }
 
+/* 💀 Forces everything in .post-header to stay on one line and aligned LEFT */
+/* 💀 Forces everything to be FLUSH LEFT with NO extra spacing */
 .post-header {
   display: flex;
   align-items: center;
-  gap: 8px; /* Adds spacing between avatar and username */
+  width: 100%;
+  gap: 4px; /* ✅ Reduces space between avatar and username */
   margin-bottom: 8px;
-  max-width: fit-content; /* Ensures it doesn’t stretch */
+  padding-left: 0; /* ✅ Ensures no weird extra padding */
 }
 
+/* 💀 Forces the avatar to NEVER change size, NEVER move */
 .avatar {
-  width: 32px; /* Adjust size as needed */
+  width: 32px;
   height: 32px;
-  border-radius: 50%; /* Makes it a perfect circle */
-  object-fit: cover; /* Ensures the image fills the circle */
-  display: block; /* Ensures it behaves properly inside flex */
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  min-width: 32px;
+  max-width: 32px;
+  display: inline-block; /* ✅ Ensures proper alignment */
+  margin: 0; /* ✅ NO extra space around it */
+  padding: 0;
 }
 
+/* 💀 Forces the username to stick right NEXT to the avatar */
 .username {
-  font-size: 16px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 40px); /* ✅ Makes room for the avatar */
+  text-align: left;
+  display: inline-block; /* ✅ Stops weird spacing issues */
+  flex-grow: 1; /* ✅ Prevents it from forcing extra space */
+  margin: 0;
+  padding: 0;
 }
 
 /* Post actions (Like, Comment, and Send icons) */
