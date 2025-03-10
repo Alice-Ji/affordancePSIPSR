@@ -1,332 +1,267 @@
-console.log("🚀 script.js has loaded successfully!");
-
-// Sample post data
-const posts = [
-  {
-    type: "image",
-    username: "rozy.gram",
-    media: [
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-1.jpg?raw=true",
-    ],
-    caption: "Just chilling with my best look! ✨",
-    likes: 0,
-    liked: false,
-    comments: [],
-  },
-  {
-    type: "video",
-    username: "rozy.gram",
-    media: [
-      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-1.mp4",
-    ],
-    caption: "Check out my latest moves! 🎥",
-    likes: 0,
-    liked: false,
-    comments: [],
-  },
-  {
-    type: "carousel",
-    username: "rozy.gram",
-    media: [
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-1.1.jpg?raw=true",
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-1.2.jpg?raw=true",
-    ],
-    caption: "Swipe to see the full look! 🔄",
-    likes: 0,
-    liked: false,
-    comments: [],
-    currentIndex: 0, // Track which image is showing in the carousel
-  },
-  {
-    type: "carousel",
-    username: "rozy.gram",
-    media: [
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.2.jpg?raw=true",
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.1.jpg?raw=true",
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.3.jpg?raw=true",
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.4.jpg?raw=true",
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-2.5.jpg?raw=true",
-    ],
-    caption: "Hanging out at this cool museum! ˙✧˖°📷 ༘ ⋆｡°",
-    likes: 0,
-    liked: false,
-    comments: [],
-    currentIndex: 0, // Track which image is showing in the carousel
-  },
-  {
-    type: "image",
-    username: "rozy.gram",
-    media: [
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-1.jpg?raw=true",
-    ],
-    caption: "Just chilling with my best look! ✨",
-    likes: 0,
-    liked: false,
-    comments: [],
-  },
-];
-
-//setupVideoAutoplay
-function setupVideoAutoplay() {
-  const videos = document.querySelectorAll(".video-post");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target
-            .play()
-            .catch((error) => console.warn("Autoplay prevented:", error));
-        } else {
-          entry.target.pause();
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  videos.forEach((video) => {
-    observer.observe(video);
-
-    const playOverlay = video.nextElementSibling; // Get the play button
-
-    video.addEventListener("click", () => {
-      if (video.paused) {
-        video.play();
-        playOverlay.classList.add("hidden"); // ✅ Hide play button when playing
-      } else {
-        video.pause();
-        playOverlay.classList.remove("hidden"); // ✅ Show play button when paused
-      }
-    });
-
-    video.addEventListener("play", () => {
-      setTimeout(() => playOverlay.classList.add("hidden"), 100); // ✅ Ensure it fades out after play starts
-    });
-
-    video.addEventListener("pause", () => {
-      playOverlay.classList.remove("hidden"); // ✅ Show play button when paused
-    });
-  });
+/* General Page Styles */
+body {
+  font-family: "PT Sans", Arial, sans-serif;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px 0;
 }
 
-// Function to render posts
-function renderFeed() {
-  const feed = document.getElementById("feed");
-  feed.innerHTML = ""; // Clear existing content
-
-  posts.forEach((post, index) => {
-    const postElement = document.createElement("div");
-    postElement.classList.add("post");
-
-    let mediaContent = "";
-    if (post.type === "image") {
-      mediaContent = `<img src="${post.media[0]}" alt="Post image">`;
-    } else if (post.type === "video") {
-      // ✅ Now inside the loop
-      mediaContent = `
-      <div class="video-container">
-      <video class="video-post" muted loop playsinline>
-          <source src="${post.media[0]}" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
-      <div class="play-overlay hidden"></div> <!-- ✅ This is the only play button now -->
-  </div>
-  
-      `;
-    } else if (post.type === "carousel") {
-      mediaContent = `
-        <div class="carousel-container">
-            <button class="carousel-btn left" onclick="prevImage(${index})">&lt;</button>
-            <img id="carousel-${index}" src="${post.media[0]}" alt="Carousel Image">
-            <button class="carousel-btn right" onclick="nextImage(${index})">&gt;</button>
-            <div class="carousel-indicator" id="indicator-${index}">1 / ${post.media.length}</div>
-        </div>
-      `;
-    }
-
-    postElement.innerHTML = `
-      <div class="post-header">
-          <img class="avatar" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true" alt="Avatar">
-          <span class="username">${post.username}</span>
-      </div>
-      ${mediaContent}
-      <p>${post.caption}</p>
-      <div class="post-actions">
-          <img id="like-btn-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like1.png?raw=true" 
-               alt="Like" class="action-icon" onclick="window.likePost(${index})">
-          <img id="comment-btn-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-comment.png?raw=true"
-               alt="Comment" class="action-icon" onclick="window.toggleComment(${index})">
-      </div>
-      <div id="comment-section-${index}" class="comment-section hidden">
-          <div class="comment-input-container">
-              <input type="text" id="comment-input-${index}" placeholder="Add a comment...">
-              <img id="send-comment-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-sendcomment.png?raw=true" 
-                   alt="Send" class="send-icon" onclick="window.addComment(${index})">
-          </div>
-          <ul id="comments-${index}"></ul>
-      </div>
-    `;
-
-    feed.appendChild(postElement);
-    updateComments(index);
-  });
-
-  setupVideoAutoplay(); // ✅ Ensure observer is set up after rendering
+/* Instagram App Container */
+#app {
+  width: 400px;
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  padding: 10px; /* Ensures content doesn't touch the edges */
+  box-sizing: border-box; /* Prevents padding from affecting width */
 }
 
-// Function to switch to the next image in the carousel
-window.nextImage = function (index) {
-  if (posts[index].type === "carousel") {
-    if (posts[index].currentIndex < posts[index].media.length - 1) {
-      posts[index].currentIndex++;
-      console.log(
-        `➡️ Next Image: Now showing ${posts[index].currentIndex + 1} / ${
-          posts[index].media.length
-        }`
-      );
-      updateCarousel(index);
-    }
-  }
-};
-
-// Function to switch to the previous image in the carousel
-window.prevImage = function (index) {
-  if (posts[index].type === "carousel") {
-    if (posts[index].currentIndex > 0) {
-      posts[index].currentIndex--;
-      console.log(
-        `⬅️ Previous Image: Now showing ${posts[index].currentIndex + 1} / ${
-          posts[index].media.length
-        }`
-      );
-      updateCarousel(index);
-    }
-  }
-};
-
-// Function to update the carousel display, including the indicator
-function updateCarousel(index) {
-  let post = posts[index];
-
-  console.log(
-    `🔄 Updating carousel ${index}: Now at ${post.currentIndex + 1} / ${
-      post.media.length
-    }`
-  );
-
-  let imageElement = document.getElementById(`carousel-${index}`);
-  let indicatorElement = document.getElementById(`indicator-${index}`);
-
-  if (imageElement) {
-    imageElement.src = post.media[post.currentIndex]; // Update the image
-  } else {
-    console.warn(`❌ Image element "carousel-${index}" not found.`);
-  }
-
-  if (indicatorElement) {
-    indicatorElement.textContent = `${post.currentIndex + 1} / ${
-      post.media.length
-    }`; // Fix: Removed extra parentheses
-  } else {
-    console.warn(`❌ Indicator element "indicator-${index}" not found.`);
-  }
+/* Feed Adjustments */
+#feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%; /* Make sure feed takes full width */
 }
 
-// Function to like a post (only once)
-window.likePost = function (index) {
-  let likeBtn = document.getElementById(`like-btn-${index}`);
-  if (!posts[index].liked) {
-    posts[index].likes++;
-    posts[index].liked = true;
-    likeBtn.src =
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like2.png?raw=true";
-  } else {
-    posts[index].likes--;
-    posts[index].liked = false;
-    likeBtn.src =
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like1.png?raw=true";
-  }
-};
-
-// Function to add a comment
-window.addComment = function (index) {
-  const input = document.getElementById(`comment-input-${index}`);
-  if (input.value.trim()) {
-    posts[index].comments.push(input.value);
-    updateComments(index);
-    input.value = ""; // Clear input
-  }
-};
-
-// Function to update comments
-function updateComments(index) {
-  const commentList = document.getElementById(`comments-${index}`);
-  commentList.innerHTML = ""; // Clear and re-add comments
-
-  posts[index].comments.forEach((comment) => {
-    const newComment = document.createElement("li");
-    newComment.textContent = comment;
-
-    // 🚨 THIS FORCES THE COMMENTS TO BE ON A NEW LINE 🚨
-    newComment.style.display = "block";
-    newComment.style.width = "100%";
-    newComment.style.marginTop = "5px";
-    newComment.style.wordWrap = "break-word";
-    newComment.style.clear = "both"; // 💥 Ensures no floating elements next to it
-
-    commentList.appendChild(newComment);
-  });
-
-  // 🚀 FORCES THE BROWSER TO RERENDER THE COMMENTS 🚀
-  commentList.style.display = "none";
-  setTimeout(() => (commentList.style.display = "block"), 10);
+/* Ensure posts take full width */
+.post {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #dbdbdb;
+  box-sizing: border-box; /* Fix width calculation issues */
 }
 
-// Load the feed when the page loads
-renderFeed();
+/* Fix for images and videos to ensure they align properly */
+.post img,
+.post video {
+  width: 100%;
+  max-height: 500px;
+  border-radius: 5px;
+  object-fit: cover;
+  display: block; /* Prevents extra spacing issues */
+  margin: 0 auto; /* Ensures media is centered */
+}
 
-// Global variable to store all comments
-let collectedComments = [];
+/* Center text elements properly */
+.post h3,
+.post p {
+  text-align: left;
+  margin-left: 5px;
+}
 
-window.addComment = function (index) {
-  const input = document.getElementById(`comment-input-${index}`);
-  if (input.value.trim()) {
-    let comment = input.value.trim();
-    posts[index].comments.push(comment);
-    collectedComments.push(comment); // Store comment in global array
-    updateComments(index);
-    input.value = ""; // Clear input
-  }
-};
+.comment-section {
+  display: flex;
+  flex-direction: column; /* Keeps comments stacked */
+  align-items: flex-start;
+  width: 100%;
+}
 
-window.addComment = function (index) {
-  const input = document.getElementById(`comment-input-${index}`);
-  if (input.value.trim()) {
-    let comment = input.value.trim();
-    posts[index].comments.push(comment);
-    collectedComments.push(comment);
-    updateComments(index);
-    input.value = "";
+/* Wrap input + send button in a row */
+.comment-input-container {
+  display: flex;
+  align-items: center; /* Align input & send button in the same row */
+  width: 100%;
+  gap: 6px; /* Adds space between input & send button */
+}
 
-    console.log("✅ addComment() triggered! New comment:", comment);
+/* Style for the input */
+.comment-section input {
+  flex: 1; /* Takes up remaining space */
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+}
 
-    // Auto-send comments
-    sendCommentsToQualtrics();
-  }
-};
+/* Ensure comments list stays below */
+.comment-section ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0;
+  margin-top: 5px; /* Space between input & first comment */
+  width: 100%; /* Makes sure comments take full width */
+}
 
-window.sendCommentsToQualtrics = function () {
-  let commentsString = collectedComments.join(" | ");
-  console.log("Trying to send comments:", commentsString);
+.comment-section ul li {
+  display: block !important; /* Forces each comment onto a new line */
+  width: 100% !important;
+  word-wrap: break-word !important;
+  white-space: normal !important;
+  clear: both !important; /* Forces separation from input box */
+  margin-top: 5px !important; /* Adds space between comments */
+  text-align: left; /* Ensures proper alignment */
+}
 
-  let qualtricsURL = "https://illinois.qualtrics.com";
-  console.log("Sending message to:", qualtricsURL);
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  window.parent.postMessage({ comments: commentsString }, qualtricsURL);
-};
+/* Carousel Images */
+.carousel-container img {
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
 
-window.toggleComment = function (index) {
-  let commentSection = document.getElementById(`comment-section-${index}`);
-  commentSection.classList.toggle("hidden"); // Show/hide comment section
-};
+/* Carousel Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px; /* Bigger size for better visibility */
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Positioning the Left and Right Buttons */
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+/* Carousel Indicator */
+.carousel-indicator {
+  position: absolute;
+  bottom: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+/* 💀 Forces everything in .post-header to stay on one line and aligned LEFT */
+/* 💀 Forces everything to be FLUSH LEFT with NO extra spacing */
+.post-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 4px; /* ✅ Reduces space between avatar and username */
+  margin-bottom: 8px;
+  padding-left: 0; /* ✅ Ensures no weird extra padding */
+}
+
+/* 💀 Forces the avatar to NEVER change size, NEVER move */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  min-width: 32px;
+  max-width: 32px;
+  display: inline-block; /* ✅ Ensures proper alignment */
+  margin: 0; /* ✅ NO extra space around it */
+  padding: 0;
+}
+
+/* 💀 Forces the username to stick right NEXT to the avatar */
+.username {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 40px); /* ✅ Makes room for the avatar */
+  text-align: left;
+  display: inline-block; /* ✅ Stops weird spacing issues */
+  flex-grow: 1; /* ✅ Prevents it from forcing extra space */
+  margin: 0;
+  padding: 0;
+}
+
+/* Post actions (Like, Comment, and Send icons) */
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icons */
+  margin-top: 5px;
+}
+
+/* Like & Comment buttons */
+.action-icon {
+  max-width: 24px;
+  max-height: 24px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  object-fit: contain; /* Prevents cropping */
+  display: inline-block; /* Ensures they don’t collapse */
+}
+
+/* Send Comment button */
+.send-icon {
+  max-width: 24px;
+  max-height: 24px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  object-fit: contain; /* Prevents cropping */
+  display: inline-block; /* Ensures they don’t collapse */
+}
+
+/* Ensure images don’t overflow */
+img {
+  max-width: unset; /* Remove unwanted scaling */
+  height: auto; /* Keep the correct aspect ratio */
+}
+
+.hidden {
+  display: none; /* Hide elements */
+}
+
+/* play button overlay */
+.video-container {
+  position: relative;
+  display: flex;
+  width: 100%; /* ✅ Make the video take the full width */
+  max-width: 100%; /* ✅ Ensure it doesn't overflow */
+  justify-content: center;
+  align-items: center;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px; /* ✅ Force a specific width */
+  height: 50px; /* ✅ Force a specific height */
+  opacity: 0.9;
+  pointer-events: none; /* ✅ Ensures taps go to video */
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  visibility: visible; /* ✅ Ensures smooth hiding */
+  display: block; /* ✅ Make sure it's being rendered */
+  background-image: url("https://github.com/ruochongji/affordancePSIPSR/blob/main/playbutton.png?raw=true"); /* ✅ Use as a background image */
+  background-size: contain; /* ✅ Ensures full visibility */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hidden {
+  opacity: 0; /* ✅ Fade out instead of disappearing abruptly */
+  visibility: hidden;
+}
