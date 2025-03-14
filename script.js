@@ -1,4 +1,23 @@
 console.log("🚀 script.js has loaded successfully!");
+window.setUsername = function () {
+  const input = document.getElementById("username-input").value.trim();
+  if (input) {
+    localStorage.setItem("username", input); // Store username
+    document.getElementById("username-container").style.display = "none"; // Hide input box
+    document.getElementById("app").style.display = "block"; // Show feed
+    username = input; // Set global username
+    renderFeed(); // Ensure the feed loads properly
+  } else {
+    alert("Please enter a username.");
+  }
+};
+
+let username = localStorage.getItem("username");
+
+if (username) {
+  document.getElementById("username-container").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}
 
 // Sample post data
 const posts = [
@@ -326,26 +345,15 @@ let collectedComments = [];
 window.addComment = function (index) {
   const input = document.getElementById(`comment-input-${index}`);
   if (input.value.trim()) {
-    let comment = input.value.trim();
-    posts[index].comments.push(comment);
-    collectedComments.push(comment); // Store comment in global array
-    updateComments(index);
-    input.value = ""; // Clear input
-  }
-};
-
-window.addComment = function (index) {
-  const input = document.getElementById(`comment-input-${index}`);
-  if (input.value.trim()) {
-    let comment = input.value.trim();
+    let comment = `${localStorage.getItem("username")}: ${input.value.trim()}`;
     posts[index].comments.push(comment);
     collectedComments.push(comment);
     updateComments(index);
     input.value = "";
 
-    console.log("✅ addComment() triggered! New comment:", comment);
+    console.log("✅ New comment:", comment);
 
-    // Auto-send comments
+    // Send to Qualtrics
     sendCommentsToQualtrics();
   }
 };
