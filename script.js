@@ -1,3 +1,7 @@
+//retrive user name
+let currentUser = localStorage.getItem("username") || "Guest"; // Retrieve stored username
+console.log("Logged in as:", currentUser);
+
 console.log("🚀 script.js has loaded successfully!");
 
 // Sample post data
@@ -287,9 +291,16 @@ window.likePost = function (index) {
 window.addComment = function (index) {
   const input = document.getElementById(`comment-input-${index}`);
   if (input.value.trim()) {
-    posts[index].comments.push(input.value);
+    let comment = `${currentUser}: ${input.value.trim()}`; // Attach username
+    posts[index].comments.push(comment);
+    collectedComments.push(comment); // Store comment globally
     updateComments(index);
     input.value = ""; // Clear input
+
+    console.log("✅ New comment:", comment);
+
+    // Auto-send comments
+    sendCommentsToQualtrics();
   }
 };
 
