@@ -369,7 +369,9 @@ window.sendCommentsToQualtrics = function () {
   console.log("Trying to send comments:", commentsString);
 
   let qualtricsURL = "https://illinois.qualtrics.com";
-  console.log("Sending message to:", qualtricsURL);
+  let commentData = { comments: collectedComments.join(" | ") };
+  console.log("✅ Sending comment data:", commentData);
+
 
   window.parent.postMessage({ comments: commentsString }, qualtricsURL);
 };
