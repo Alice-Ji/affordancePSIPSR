@@ -150,14 +150,6 @@ function setupVideoAutoplay() {
   });
 }
 
-// randomize post order
-function shufflePosts() {
-  for (let i = posts.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [posts[i], posts[j]] = [posts[j], posts[i]]; // Swap elements
-  }
-}
-
 // Function to render posts
 function renderFeed() {
   const feed = document.getElementById("feed");
