@@ -1,7 +1,3 @@
-//retrive user name
-let currentUser = localStorage.getItem("username") || "Guest";
-console.log("✅ Logged in as:", currentUser);
-
 console.log("🚀 script.js has loaded successfully!");
 
 // Sample post data
@@ -287,6 +283,16 @@ window.likePost = function (index) {
   }
 };
 
+// Function to add a comment
+window.addComment = function (index) {
+  const input = document.getElementById(`comment-input-${index}`);
+  if (input.value.trim()) {
+    posts[index].comments.push(input.value);
+    updateComments(index);
+    input.value = ""; // Clear input
+  }
+};
+
 // Function to update comments
 function updateComments(index) {
   const commentList = document.getElementById(`comments-${index}`);
@@ -319,31 +325,42 @@ let collectedComments = [];
 
 window.addComment = function (index) {
   const input = document.getElementById(`comment-input-${index}`);
-  let commentText = input.value.trim();
-
-  if (commentText) {
-    let currentUser = localStorage.getItem("username") || "Guest"; // Ensure username is retrieved
-    let comment = `${currentUser}: ${commentText}`; // Append username
-
+  if (input.value.trim()) {
+    let comment = input.value.trim();
     posts[index].comments.push(comment);
+    collectedComments.push(comment); // Store comment in global array
     updateComments(index);
     input.value = ""; // Clear input
+  }
+};
 
-    console.log("✅ New comment added:", comment);
+window.addComment = function (index) {
+  const input = document.getElementById(`comment-input-${index}`);
+  if (input.value.trim()) {
+    let comment = input.value.trim();
+    posts[index].comments.push(comment);
+    collectedComments.push(comment);
+    updateComments(index);
+    input.value = "";
+
+    console.log("✅ addComment() triggered! New comment:", comment);
+
+    // Auto-send comments
+    sendCommentsToQualtrics();
   }
 };
 
 window.sendCommentsToQualtrics = function () {
-  if (collectedComments.length === 0) {
-    console.warn("⚠️ No comments to send.");
-    return;
-  }
-
   let commentsString = collectedComments.join(" | ");
-  console.log("🚀 Sending comments:", commentsString);
+  console.log("Trying to send comments:", commentsString);
 
-  let qualtricsURL = "https://illinois.qualtrics.com"; // ✅ Ensure this matches your Qualtrics domain
-  console.log("🌐 Sending message to:", qualtricsURL);
+  let qualtricsURL = "https://illinois.qualtrics.com";
+  console.log("Sending message to:", qualtricsURL);
 
-  window.parent.postMessage({ comments: commentsString }, "*"); // ✅ Use "*" if unsure about origin filtering
+  window.parent.postMessage({ comments: commentsString }, qualtricsURL);
+};
+
+window.toggleComment = function (index) {
+  let commentSection = document.getElementById(`comment-section-${index}`);
+  commentSection.classList.toggle("hidden"); // Show/hide comment section
 };
