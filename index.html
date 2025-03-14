@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>
-      // Redirect to landing.html if no username is stored
-      if (!localStorage.getItem("username")) {
-        window.location.href = "landing.html";
-      }
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instagram</title>
+    <title>Fake Instagram</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <div id="app">
+    <!-- Username Input Box (Initially Visible) -->
+    <div id="username-container">
+      <h2>Enter Your Username</h2>
+      <input type="text" id="username-input" placeholder="Username" />
+      <button id="username-btn">Continue</button>
+    </div>
+
+    <!-- The actual feed (Initially Hidden) -->
+    <div id="app" style="display: none">
       <div id="feed"></div>
     </div>
+
+    <!-- ✅ Script to Handle Username Input & Page Behavior -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const usernameInput = document.getElementById("username-input");
+        const usernameBtn = document.getElementById("username-btn");
+        const usernameContainer = document.getElementById("username-container");
+        const appContainer = document.getElementById("app");
+
+        function showFeed(username) {
+          localStorage.setItem("username", username);
+          console.log("✅ Username saved:", username);
+
+          usernameContainer.style.display = "none"; // Hide input
+          appContainer.style.display = "block"; // Show feed
+        }
+
+        usernameBtn.addEventListener("click", function () {
+          let username = usernameInput.value.trim();
+          if (username) {
+            showFeed(username);
+          } else {
+            alert("Please enter a username.");
+          }
+        });
+
+        // Check if username already exists in localStorage
+        let storedUsername = localStorage.getItem("username");
+
+        if (storedUsername) {
+          console.log("✅ Username found:", storedUsername);
+          showFeed(storedUsername); // Directly show the feed if username exists
+        }
+      });
+    </script>
+
     <script src="script.js"></script>
   </body>
 </html>

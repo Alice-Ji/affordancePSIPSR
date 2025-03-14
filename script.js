@@ -1,6 +1,6 @@
 //retrive user name
-let currentUser = localStorage.getItem("username") || "Guest"; // Retrieve stored username
-console.log("Logged in as:", currentUser);
+let currentUser = localStorage.getItem("username") || "Guest";
+console.log("✅ Logged in as:", currentUser);
 
 console.log("🚀 script.js has loaded successfully!");
 
@@ -293,12 +293,13 @@ window.addComment = function (index) {
   let commentText = input.value.trim();
 
   if (commentText) {
-    let comment = `${currentUser}: ${commentText}`; // Add username
+    let comment = `${currentUser}: ${commentText}`; // Append username
+
     posts[index].comments.push(comment);
     updateComments(index);
     input.value = ""; // Clear input
 
-    console.log("✅ New comment:", comment);
+    console.log("✅ New comment added:", comment);
   }
 };
 
@@ -334,12 +335,16 @@ let collectedComments = [];
 
 window.addComment = function (index) {
   const input = document.getElementById(`comment-input-${index}`);
-  if (input.value.trim()) {
-    let comment = input.value.trim();
+  let commentText = input.value.trim();
+
+  if (commentText) {
+    let comment = `${currentUser}: ${commentText}`; // Append username
+
     posts[index].comments.push(comment);
-    collectedComments.push(comment); // Store comment in global array
     updateComments(index);
     input.value = ""; // Clear input
+
+    console.log("✅ New comment added:", comment);
   }
 };
 
@@ -358,7 +363,6 @@ window.addComment = function (index) {
     console.log("✅ New comment added:", comment);
   }
 };
-
 
 window.sendCommentsToQualtrics = function () {
   let commentsString = collectedComments.join(" | ");
