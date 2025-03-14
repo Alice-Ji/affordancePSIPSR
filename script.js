@@ -290,17 +290,15 @@ window.likePost = function (index) {
 // Function to add a comment
 window.addComment = function (index) {
   const input = document.getElementById(`comment-input-${index}`);
-  if (input.value.trim()) {
-    let comment = `${currentUser}: ${input.value.trim()}`; // Attach username
+  let commentText = input.value.trim();
+
+  if (commentText) {
+    let comment = `${currentUser}: ${commentText}`; // Add username
     posts[index].comments.push(comment);
-    collectedComments.push(comment); // Store comment globally
     updateComments(index);
     input.value = ""; // Clear input
 
     console.log("✅ New comment:", comment);
-
-    // Auto-send comments
-    sendCommentsToQualtrics();
   }
 };
 
@@ -347,19 +345,20 @@ window.addComment = function (index) {
 
 window.addComment = function (index) {
   const input = document.getElementById(`comment-input-${index}`);
-  if (input.value.trim()) {
-    let comment = input.value.trim();
+  let commentText = input.value.trim();
+
+  if (commentText) {
+    let currentUser = localStorage.getItem("username") || "Guest"; // Ensure username is retrieved
+    let comment = `${currentUser}: ${commentText}`; // Append username
+
     posts[index].comments.push(comment);
-    collectedComments.push(comment);
     updateComments(index);
-    input.value = "";
+    input.value = ""; // Clear input
 
-    console.log("✅ addComment() triggered! New comment:", comment);
-
-    // Auto-send comments
-    sendCommentsToQualtrics();
+    console.log("✅ New comment added:", comment);
   }
 };
+
 
 window.sendCommentsToQualtrics = function () {
   let commentsString = collectedComments.join(" | ");
