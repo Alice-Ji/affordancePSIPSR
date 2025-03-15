@@ -19,6 +19,8 @@ if (username) {
   document.getElementById("app").style.display = "block";
 }
 
+let likeCount = 0;
+
 // Sample post data
 const posts = [
   {
@@ -292,11 +294,13 @@ window.likePost = function (index) {
   if (!posts[index].liked) {
     posts[index].likes++;
     posts[index].liked = true;
+    likeCount++; // Increase total like count
     likeBtn.src =
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like2.png?raw=true";
   } else {
     posts[index].likes--;
     posts[index].liked = false;
+    likeCount--; // Decrease total like count if unliked
     likeBtn.src =
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like1.png?raw=true";
   }
@@ -360,12 +364,17 @@ window.addComment = function (index) {
 
 window.sendCommentsToQualtrics = function () {
   let commentsString = collectedComments.join(" | ");
-  console.log("Trying to send comments:", commentsString);
-
   let qualtricsURL = "https://illinois.qualtrics.com";
-  console.log("Sending message to:", qualtricsURL);
 
-  window.parent.postMessage({ comments: commentsString }, qualtricsURL);
+  console.log("Sending to Qualtrics:", {
+    comments: commentsString,
+    likes: likeCount,
+  });
+
+  window.parent.postMessage(
+    { comments: commentsString, likes: likeCount },
+    qualtricsURL
+  );
 };
 
 window.toggleComment = function (index) {
