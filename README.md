@@ -1,6 +1,6 @@
 # affordancePSIPSR
 
-qualtrics question javascript
+## send comments javascript
 
 Qualtrics.SurveyEngine.addOnload(function() {
     console.log("Listening for messages...");
@@ -33,35 +33,40 @@ Qualtrics.SurveyEngine.addOnload(function() {
 
 
 
-qualtrics js version 2
+## send comment and count likes
 
 Qualtrics.SurveyEngine.addOnload(function() {
-    console.log("👂 Listening for messages from the Instagram page...");
+    console.log("Listening for messages...");
 
     window.addEventListener("message", function(event) {
-        console.log("📩 Received message:", event);
+        console.log("Received raw message:", event);
 
-        // ✅ Ensure the message contains `comments`
-        if (event.data && event.data.comments) {
-            console.log("🔗 Message received from:", event.origin);
-            console.log("💬 Comments received:", event.data.comments);
+        if (event.data) {
+            console.log("Received message from:", event.origin);
+            console.log("Message content:", event.data);
 
-            // ✅ Set embedded data in Qualtrics
-            Qualtrics.SurveyEngine.setEmbeddedData("comments", event.data.comments);
-            console.log("✅ Qualtrics Embedded Data has been set.");
+            // Capture comments if available
+            if (event.data.comments) {
+                Qualtrics.SurveyEngine.setEmbeddedData("comments", event.data.comments);
+                console.log("Qualtrics Embedded Data (comments) set.");
+            }
+
+            // Capture like count if available
+            if (event.data.likes !== undefined) {
+                Qualtrics.SurveyEngine.setEmbeddedData("likes", event.data.likes);
+                console.log("Qualtrics Embedded Data (likes) set.");
+            }
         } else {
-            console.warn("⚠️ Message received but no 'comments' data:", event.data);
+            console.warn("Message received but does not contain expected data:", event.data);
         }
     });
 
-    // ✅ Force comments to send before Qualtrics advances
+    // Ensure Instagram embed sends data before advancing
     Qualtrics.SurveyEngine.addOnUnload(function() {
-        console.log("⚠️ Page is advancing. Ensuring comments are sent...");
-        
+        console.log("Survey page is advancing, ensuring comments & likes are sent...");
         let iframe = document.querySelector("iframe");
         if (iframe) {
-            console.log("🛜 Requesting comment transfer before page change...");
-            iframe.contentWindow.postMessage({ request: "sendComments" }, "*");
+            iframe.contentWindow.postMessage({ request: "sendComments" }, "https://ruochongji.github.io");
         }
     });
 });
