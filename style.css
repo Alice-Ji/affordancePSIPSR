@@ -265,3 +265,51 @@ img {
   opacity: 0; /* ✅ Fade out instead of disappearing abruptly */
   visibility: hidden;
 }
+
+#username-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+}
+
+#username-container p {
+  font-size: 18px;
+  color: #262626;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#username-input {
+  width: 280px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+}
+
+#username-input:focus {
+  border-color: #a8a8a8;
+}
+
+#username-container button {
+  margin-top: 10px;
+  width: 280px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #0095f6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#username-container button:hover {
+  background-color: #007acc;
+}
