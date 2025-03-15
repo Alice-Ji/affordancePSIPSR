@@ -37,10 +37,504 @@ const posts = [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
   },
   {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-2.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-3.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-4.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-5.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-6.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-7.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-8.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-9.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-10.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-11.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-12.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-13.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-14.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-15.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-16.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-17.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-18.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-19.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-20.jpg?raw=true",
+    ],
+    caption: "Just chilling with my best look! ✨",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
     type: "video",
     username: "rozy.gram",
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-1.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-2.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-3.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-4.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-5.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-6.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-7.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-8.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-9.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-10.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-11.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-12.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-13.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-14.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-15.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-16.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-17.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-18.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-19.mp4",
+    ],
+    caption: "Check out my latest moves! 🎥",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "video",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/raw/refs/heads/main/rozy-video-20.mp4",
     ],
     caption: "Check out my latest moves! 🎥",
     likes: 0,
@@ -83,30 +577,301 @@ const posts = [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
   },
   {
-    type: "image",
+    type: "carousel",
     username: "rozy.gram",
     media: [
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-3.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-3.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-3.3.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-3.4.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Swipe to see the full look! 🔄",
     likes: 0,
     liked: false,
     comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
     profilePic:
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
   },
   {
-    type: "video",
-    username: "Qelbree® (viloxazine)",
+    type: "carousel",
+    username: "rozy.gram",
     media: [
-      "https://github.com/Alice-Ji/affordancePSIPSR/blob/main/qelbree-adhd-fullscreenISI.mp4?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-4.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-4.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-4.3.jpg?raw=true",
     ],
-    caption: "Sponsored Content",
+    caption: "Swipe to see the full look! 🔄",
     likes: 0,
     liked: false,
     comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
     profilePic:
-      "https://github.com/ruochongji/affordancePSIPSR/blob/main/qelbree-avatar.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-5.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-5.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-5.3.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-5.4.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-6.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-6.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-6.3.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-6.4.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-7.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-7.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-7.3.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-8.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-8.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-8.3.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-9.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-9.2.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-10.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-10.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-10.3.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-10.4.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-10.5.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-11.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-11.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-11.3.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-11.4.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-12.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-12.2.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-13.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-13.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-13.3.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-13.4.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-13.5.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-14.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-14.2.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-15.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-15.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-15.3.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-16.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-16.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-16.3.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-16.4.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-17.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-17.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-17.3.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-17.4.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-18.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-18.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-18.3.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-19.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-19.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-19.3.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
+  {
+    type: "carousel",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-20.1.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-20.2.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-20.3.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-20.4.jpg?raw=true",
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-carouse-20.5.jpg?raw=true",
+    ],
+    caption: "Swipe to see the full look! 🔄",
+    likes: 0,
+    liked: false,
+    comments: [],
+    currentIndex: 0, // Track which image is showing in the carousel
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
   },
 ];
 
@@ -167,8 +932,17 @@ function setupVideoAutoplay() {
   });
 }
 
+// Function to shuffle posts using Fisher-Yates algorithm
+function shufflePosts() {
+  for (let i = posts.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [posts[i], posts[j]] = [posts[j], posts[i]]; // Swap elements
+  }
+}
+
 // Function to render posts
 function renderFeed() {
+  shufflePosts(); // Randomize posts before rendering
   const feed = document.getElementById("feed");
   feed.innerHTML = ""; // Clear existing content
 
