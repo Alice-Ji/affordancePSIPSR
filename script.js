@@ -29,7 +29,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-1.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -42,7 +42,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-2.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -55,7 +55,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-3.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -68,7 +68,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-4.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -81,7 +81,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-5.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -94,7 +94,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-6.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -107,7 +107,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-7.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -120,7 +120,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-8.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -133,7 +133,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-9.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -146,7 +146,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-10.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -159,7 +159,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-11.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -172,7 +172,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-12.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -185,7 +185,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-13.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -198,7 +198,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-14.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -211,7 +211,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-15.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -224,7 +224,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-16.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -237,7 +237,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-17.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -250,7 +250,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-18.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -263,7 +263,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-19.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -276,7 +276,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-photo-20.jpg?raw=true",
     ],
-    caption: "Just chilling with my best look! ✨",
+    caption: "Just chilling with my best look! ✨\nNew outfit reveal soon! 👀",
     likes: 0,
     liked: false,
     comments: [],
@@ -980,7 +980,7 @@ function renderFeed() {
           <span class="username">${post.username}</span>
       </div>
       ${mediaContent}
-      <p>${post.caption}</p>
+      <p>${post.caption.replace(/\n/g, "<br>")}</p>
       <div class="post-actions">
           <img id="like-btn-${index}" src="https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like1.png?raw=true" 
                alt="Like" class="action-icon" onclick="window.likePost(${index})">
