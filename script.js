@@ -896,6 +896,19 @@ const posts = [
     profilePic:
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
   },
+  {
+    type: "image",
+    username: "rozy.gram",
+    media: [
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-ad-image-JBL.jpg?raw=true",
+    ],
+    caption: "It's time to feel alive, feel the music, feel the vibe!",
+    likes: 0,
+    liked: false,
+    comments: [],
+    profilePic:
+      "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-avatar.jpg?raw=true",
+  },
 ];
 
 //setupVideoAutoplay
