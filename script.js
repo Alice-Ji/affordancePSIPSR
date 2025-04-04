@@ -902,7 +902,7 @@ const posts = [
     media: [
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/rozy-ad-image-JBL.jpg?raw=true",
     ],
-    caption: "It's time to feel alive, feel the music, feel the vibe!",
+    caption: "[Sponsored by JBL]\nIt's time to feel alive, feel the music, feel the vibe!",
     likes: 0,
     liked: false,
     comments: [],
