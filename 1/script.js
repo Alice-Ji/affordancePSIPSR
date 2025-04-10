@@ -1112,6 +1112,8 @@ window.likePost = function (index) {
     likeBtn.src =
       "https://github.com/ruochongji/affordancePSIPSR/blob/main/ins-like1.png?raw=true";
   }
+  // ✅ Send updated data to Qualtrics on every like
+  sendCommentsToQualtrics();
 };
 
 // Function to add a comment
