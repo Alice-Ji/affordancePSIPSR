@@ -1,72 +1,29 @@
-# affordancePSIPSR
+# Affordance Study: Parasocial Relationships & Parasocial Interaction
 
-## send comments javascript
+This project investigates how **social media affordances** (specifically, the presence or absence of a comment function) shape users’ parasocial relationships (PSR) and parasocial interactions (PSI) with influencers.
 
-Qualtrics.SurveyEngine.addOnload(function() {
-    console.log("Listening for messages...");
+## Overview
+Participants were randomly assigned to interact with a **custom-built fake Instagram feed** of a lifestyle influencer. The manipulation:  
+- **Comment-enabled condition:** Users could post comments during the 10-minute interaction period. Their comments were logged and later analyzed (count, length, sentiment).  
+- **Comment-disabled condition:** Users viewed the same feed without the ability to comment.  
 
-    window.addEventListener("message", function(event) {
-        console.log("Received raw message:", event);
+After exposure, participants completed a survey measuring:  
+- Strength of parasocial relationships (PSR)  
+- Perceived parasocial interaction (PSI)
+- Purchase intention of endorsed products
+- Related covariates (e.g., media engagement, attitudes)  
+ 
 
-        if (event.data && event.data.comments) {
-            console.log("Received message from:", event.origin);
-            console.log("Message content:", event.data);
+## Methods
+- **Platform:** Experiment implemented in HTML/JavaScript.  
+- **Sample:** Online participant pool (N = 330).  
+- **Measures:** Standardized PSR and PSI scales + behavioral log data.  
+- **Analysis:** Mixed-method approach combining survey data with text/sentiment analysis of comments.  
 
-            Qualtrics.SurveyEngine.setEmbeddedData("comments", event.data.comments);
-            console.log("Qualtrics Embedded Data should now be set.");
-        } else {
-            console.warn("Message received but does not contain 'comments':", event.data);
-        }
-    });
+## Academic Output
+This study is being prepared for submission to American Academy of Advertising [2026 Annual Conference](https://aaasite.memberclicks.net/2026-annual-conference).  
 
-    // Force Instagram embed to send comments before advancing
-    Qualtrics.SurveyEngine.addOnUnload(function() {
-        console.log("Survey page is advancing, ensuring comments are sent...");
-        let iframe = document.querySelector("iframe");
-        if (iframe) {
-            iframe.contentWindow.postMessage({ request: "sendComments" }, "https://ruochongji.github.io");
-        }
-    });
-});
-
-
-
-
-
-## send comment and count likes
-
-Qualtrics.SurveyEngine.addOnload(function() {
-    console.log("Listening for messages...");
-
-    window.addEventListener("message", function(event) {
-        console.log("Received raw message:", event);
-
-        if (event.data) {
-            console.log("Received message from:", event.origin);
-            console.log("Message content:", event.data);
-
-            // Capture comments if available
-            if (event.data.comments) {
-                Qualtrics.SurveyEngine.setEmbeddedData("comments", event.data.comments);
-                console.log("Qualtrics Embedded Data (comments) set.");
-            }
-
-            // Capture like count if available
-            if (event.data.likes !== undefined) {
-                Qualtrics.SurveyEngine.setEmbeddedData("likes", event.data.likes);
-                console.log("Qualtrics Embedded Data (likes) set.");
-            }
-        } else {
-            console.warn("Message received but does not contain expected data:", event.data);
-        }
-    });
-
-    // Ensure Instagram embed sends data before advancing
-    Qualtrics.SurveyEngine.addOnUnload(function() {
-        console.log("Survey page is advancing, ensuring comments & likes are sent...");
-        let iframe = document.querySelector("iframe");
-        if (iframe) {
-            iframe.contentWindow.postMessage({ request: "sendComments" }, "https://ruochongji.github.io");
-        }
-    });
-});
+## Industry Application
+- **Social platforms:** Demonstrates how interaction affordances (like enabling/disabling comments) can directly impact user engagement and perceived influencer closeness.  
+- **Influencer marketing:** Suggests that encouraging user comments fosters stronger parasocial connections, potentially boosting ad effectiveness.  
+- **Product/UX teams:** Provides an experimental framework for testing affordances in controlled environments.  
